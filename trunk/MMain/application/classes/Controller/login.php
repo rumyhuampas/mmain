@@ -4,12 +4,19 @@ class Controller_Login extends Controller {
 
 	public function action_index()
 	{
-		if(Helpers_User::IsAnyUser()){
-			$view = View::factory('login');
-		}
-		else{
-			$view = View::factory('users');
-		}
+	    $id = $this->request->param('id');
+        if(isset($id)){
+            $decId = decrypt($id);
+            $view = View::factory('welcome');    
+        }
+        else{
+    		if(Helpers_User::IsAnyUser()){
+    			$view = View::factory('login');
+    		}
+    		else{
+    			$view = View::factory('users');
+    		}
+        }
 		$view->title = Helpers_Const::APPNAME." - Usuarios";
 		$view->menuid = Helpers_Const::MENUINICIOID;
 		$view->users = Helpers_User::get();
