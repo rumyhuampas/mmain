@@ -94,6 +94,7 @@ button,input,select,textarea { font-size: 12px; font-family: Arial, Helvetica, s
 /*********** index.html (login page) *******/
 
 .loginbox { background: #444; padding: 10px; width: 400px; margin: 8% auto 0 auto; position: relative; }
+.welcomeloginbox { width: 700px; }
 .loginboxinner { 
 	background: #333; padding: 20px; position: relative; border: 1px solid #333;
 	-moz-box-shadow: inset 0 1px 0 #444; -webkit-box-shadow: inset 0 1px 0 #444; box-shadow: inset 0 1px 0 #444;
@@ -457,6 +458,7 @@ button,input,select,textarea { font-size: 12px; font-family: Arial, Helvetica, s
 .widgetlist li a.stork { background-image: url(../images/icons/default/stork.png); }
 .widgetlist li a.undo { background-image: url(../images/icons/default/undo.png); }
 .widgetlist li a.list { background-image: url(../images/icons/default/list.png); }
+.widgetlist li a.porkman { background-image: url(../images/porkman2.png); }
 
 .formwidgetlist { list-style: none; margin-left:220px;}
 .formwidgetlist li { float: left; margin-right: 10px; margin-bottom: 10px; }

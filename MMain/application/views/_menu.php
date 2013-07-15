@@ -3,7 +3,11 @@
     
       	<div class="leftmenu">
     		<ul>
-            	<li id=<?php echo Helpers_Const::MENUINICIOID; ?> menuid=<?php echo $menuid ?>><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'users')); ?> class="dashboard"><span>Usuarios</span></a></li>
+            	<li id=<?php echo Helpers_Const::MENUINICIOID; ?> menuid=<?php echo $menuid ?>>
+            		<a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'new')); ?> class="dashboard">
+            			<span>Usuarios</span>            			
+            		</a>
+            	</li>
             </ul>
                 
         </div><!--leftmenu-->
