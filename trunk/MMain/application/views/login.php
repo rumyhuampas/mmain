@@ -6,7 +6,7 @@
 		<div class="loginboxinner radius3">
 	    	<div class="loginheader">
 	    		<h1 class="bebas">Ingresar</h1>
-	        	<div class="logo"><img src=<?php echo URL::base()."assets/images/porkman.png" ?> alt="" /></div>
+	        	<div class="logo"><img src=<?php echo URL::base()."assets/images/msheader.png" ?> alt="" /></div>
 	    	</div><!--loginheader-->
 	        
 	        <div class="loginform">

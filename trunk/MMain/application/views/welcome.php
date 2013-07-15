@@ -1,17 +1,19 @@
 <?php include Kohana::find_file('views', '_loginheader'); ?>
 
+<script src=<?php echo URL::base()."/scripts/custom/welcome.js" ?> type="text/javascript"></script>
+
 <body class="login">
-	<div class="loginbox radius3">
+	<div class="loginbox radius3 welcomeloginbox">
 		<div class="loginboxinner radius3">
 			<div class="loginheader">
-				<div style="margin-left: 20%;"><img src=<?php echo URL::base()."assets/images/ms.png" ?> alt="" /></div>
+				<div style="margin-left: 35%;"><img src=<?php echo URL::base()."assets/images/ms.png" ?> alt="" /></div>
 			</div>
 			
 			<br clear="all">
 			
-			<ul class="widgetlist">
-				<li><a class="add default" href="/mfarm/abmcerdas/new" style=" ">Nueva cerda</a></li>
-				<li><a class="editor" href="/mfarm/abmcerdas/edit">Modif. cerda</a></li>
+			<ul class="widgetlist" style="margin-left: 8%;">
+				<li><a class="porkman" href="/mfarm/home" style=" ">PorkMan</a></li>
+				<li><a class="editor" href="/mjor/">JorMan</a></li>
 				<li><a class="add default" href="/mfarm/abmcerdas/new" style=" ">Nueva cerda</a></li>
 				<li><a class="editor" href="/mfarm/abmcerdas/edit">Modif. cerda</a></li>
 			</ul>

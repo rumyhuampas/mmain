@@ -17,7 +17,7 @@ class Controller_Login extends Controller {
     			$view = View::factory('users');
     		}
         }
-		$view->title = Helpers_Const::APPNAME." - Usuarios";
+		$view->title = Helpers_Const::APPNAME." - Login";
 		$view->menuid = Helpers_Const::MENUINICIOID;
 		$view->users = Helpers_User::get();
 		$this->response->body($view->render());
