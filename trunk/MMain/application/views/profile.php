@@ -14,29 +14,36 @@
         	<div class="maincontentinner">
             	
             	<ul class="maintabmenu">
-            		<?php if(Helpers_User::IsAnyUser()){
-                		echo "<li><a href=".URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'edit')).">Perfil</a></li>";
-                	}?>
-                	<li class="current"><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'new')); ?>>Usuarios del sistema</a></li>
+                	<li class="current"><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'edit')); ?>>Perfil</a></li>
+                	<li><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'new')); ?>>Usuarios del sistema</a></li>
                 </ul><!--maintabmenu-->                
             	                
                 <div class="content">
                     
                     <div class="contenttitle">
-                    	<h2 class="form"><span>Alta de Usuario</span></h2>
+                    	<h2 class="form"><span>Perfil de usuario</span></h2>
                     </div><!--contenttitle-->
                     
                     <?php include Kohana::find_file('views', '_message'); ?>
                     
-					<?php echo Form::open('abmusers/new', array('method' => 'POST', 'class' => 'stdform', 'id' => 'formnewuser'));
+					<?php echo Form::open('abmusers/edit', array('method' => 'POST', 'class' => 'stdform', 'id' => 'formedituser'));
+						echo '<p>';
+						echo '<div class="profile"><img alt="" src="'.URL::base().'assets/images/avatar3.png"></div>';
+						echo '</p>';
                     	echo '<p>';
                         	echo Form::label('username', 'Nombre');
 							echo '<span class="field">';
-							echo Form::input('username', '', array('type' => 'text', 'id' => 'username', 'class' => 'smallinput'));
+							echo Form::input('username', $userobj->UserName, array('type' => 'text', 'id' => 'username', 'class' => 'smallinput', 'style' => 'background-color: #CCCCCC', 'readonly'));
                             echo '</span>';
                         echo '</p>';
 						echo '<p>';
-                        	echo Form::label('newpass', 'Nueva contraseña');
+                        	echo Form::label('oldpass', 'Contraseña actual');
+							echo '<span class="field">';
+							echo Form::input('oldpass', '', array('type' => 'password', 'id' => 'oldpass', 'class' => 'smallinput'));
+                            echo '</span>';
+                        echo '</p>';
+						echo '<p>';
+                        	echo Form::label('newpass', 'Nueva contrseña');
 							echo '<span class="field">';
 							echo Form::input('newpass', '', array('type' => 'password', 'id' => 'newpass', 'class' => 'smallinput'));
                             echo '</span>';
@@ -53,43 +60,6 @@
                         echo '</p>';
                     echo Form::close();
 					?>
-            
-            
-	            	<div class="contenttitle radiusbottom0">
-	                	<h2 class="table"><span>Usuarios</span></h2>
-	                </div><!--contenttitle-->
-	                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
-	                    <colgroup>
-	                        <col class="con0" />
-	                        <col class="con1" />
-	                    </colgroup>
-	                    <thead>
-	                        <tr>
-	                            <th class="head0">Nombre</th>
-	                            <th class="head1">&nbsp;</th>
-	                        </tr>
-	                    </thead>
-	                    <tfoot>
-	                        <tr>
-	                            <th class="head0">Nombre</th>
-	                            <th class="head1">&nbsp;</th>
-	                        </tr>
-	                    </tfoot>
-	                    <tbody>
-	                    	<?php foreach($users as $user){
-	                    		echo '<tr>';
-		                            echo '<td>'.$user->UserName.'</td>';
-									echo '<td class="center">';
-									if($user->Id != $_userid){
-		                            	echo '<a href='.URL::base().Route::get('default')
-		                            		->uri(array('controller' => 'abmusers', 'action' => 'delete', 'id' => $user->Id)).'class="delete">Eliminar</a>';
-									}
-									echo '</td>';
-		                        echo '</tr>';
-	                    	}
-							?>
-	                    </tbody>
-	                </table>
                 
                 	<br clear="all" />
                     
