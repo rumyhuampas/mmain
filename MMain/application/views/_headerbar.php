@@ -1,9 +1,11 @@
 <?php 
-	$_sess = Session::instance();
-	$_username = $_sess->get('currentuser');
-	$_userid = $_sess->get('currentuserid');
-	if($_userid == ''){
-		//HTTP::redirect(Route::get('default')->uri(array('controller' => 'login')));	
+	if(Helpers_User::IsAnyUser()){
+		$_sess = Session::instance();
+		$_username = $_sess->get('currentuser');
+		$_userid = $_sess->get('currentuserid');
+		if($_userid == ''){
+			HTTP::redirect(Route::get('default')->uri(array('controller' => 'login')));	
+		}
 	}
 ?>
 
