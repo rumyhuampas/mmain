@@ -13,7 +13,7 @@
 			
 			<ul class="widgetlist" style="margin-left: 8%;">
 				<li><a class="porkman" href="/mfarm/home" style=" ">PorkMan</a></li>
-				<li><a class="editor" href="/mjor/">JorMan</a></li>
+				<li><a class="editor" href="/mjor/home">JorMan</a></li>
 				<li><a class="add default" href="/mfarm/abmcerdas/new" style=" ">Nueva cerda</a></li>
 				<li><a class="editor" href="/mfarm/abmcerdas/edit">Modif. cerda</a></li>
 			</ul>
