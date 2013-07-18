@@ -49,7 +49,7 @@ class Controller_Login extends Controller {
 		}
 	}
 	
-	public function action_createfirstuser(){
+	/*public function action_createfirstuser(){
 		if(isset($_POST['username'])){
 			$user = $_POST['username'];
 			$pass = $_POST['password'];
@@ -87,7 +87,7 @@ class Controller_Login extends Controller {
 					'msgtype' => 'msgalert', 'msgtext' => 'Debe ingresar usuario y contrasena.')));
 			}
 		}	
-	}
+	}*/
 	
 	public function action_exit(){
 		Helpers_Session::clearSession();
