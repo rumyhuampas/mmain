@@ -1,5 +1,7 @@
 <?php include Kohana::find_file('views', '_loginheader'); ?>
 
+<script src=<?php echo URL::base()."/scripts/custom/login.js" ?> type="text/javascript"></script>
+
 <body class="login">
 
 	<div class="loginbox radius3">
