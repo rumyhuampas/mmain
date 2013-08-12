@@ -8,7 +8,7 @@ class Helpers_Const {
 	const MENUINICIOID = '0';
 	const MENUABMID = '1';
 	const MENUCERDASID = '2';
-	const MENUSERVICIOSID = '3';
+	const MENUPRENAID = '3';
 	const MENUPARTOSID = '4';
 	const MENUDESTETESID = '5';
 	const MENULACTANCIAID = '6';
