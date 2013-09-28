@@ -34,6 +34,7 @@ class Controller_Login extends Controller {
 					$session = Session::instance();
 					$session->set('currentuserid', $log->Id);
 					$session->set('currentuser', $user);
+					$session->set('currentuserprofile', $log->Profile);
 					
 					HTTP::redirect(Route::get('default')->uri(array('controller' => 'welcome', 'action' => 'index')));
 				}
