@@ -6,6 +6,7 @@ class Helpers_Session {
 		$session = Session::instance();
 		$session->delete('currentuser');
 		$session->delete('currentuserid');
+		$session->delete('currentuserprofile');
 		$session->delete('endstatusid');
 	}
 }
