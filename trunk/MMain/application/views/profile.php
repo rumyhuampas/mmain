@@ -15,7 +15,13 @@
             	
             	<ul class="maintabmenu">
                 	<li class="current"><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'edit')); ?>>Perfil</a></li>
+                	<?php
+	                if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
+	                ?>
                 	<li><a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'new')); ?>>Usuarios del sistema</a></li>
+                	<?php
+					}
+                	?>
                 </ul><!--maintabmenu-->                
             	                
                 <div class="content">

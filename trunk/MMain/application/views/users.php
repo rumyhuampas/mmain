@@ -47,6 +47,16 @@
 							echo Form::input('newpass2', '', array('type' => 'password', 'id' => 'newpass2', 'class' => 'smallinput'));
                             echo '</span>';
                         echo '</p>';
+						
+						echo '<p>';
+							echo Form::label('checks', 'Perfiles');
+                            echo '<span class="formwrapper">';
+								echo '<span class="checkbox">'.Form::input('upadmin', '', array('type' => 'checkbox', 'id' => 'upadmin')).'</span>ADMIN<br>';
+                            	echo '<span class="checkbox">'.Form::input('upventa', '', array('type' => 'checkbox', 'id' => 'upventa')).'</span>VENTA<br>';
+								echo '<span class="checkbox">'.Form::input('upgranja', '', array('type' => 'checkbox', 'id' => 'upgranja')).'</span>GRANJA<br>';
+								echo '<span class="checkbox">'.Form::input('upestadistico', '', array('type' => 'checkbox', 'id' => 'upestidistico')).'</span>ESTADISTICO';
+                            echo '</span>';
+                        echo '</p>';
                         
                         echo '<p class="stdformbutton">';
                         	echo Form::button('btnsave', 'Guardar', array('class' => 'submit radius2'));
