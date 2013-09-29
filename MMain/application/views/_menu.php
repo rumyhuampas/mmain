@@ -4,7 +4,7 @@
       	<div class="leftmenu">
     		<ul>
             	<li id=<?php echo Helpers_Const::MENUINICIOID; ?> menuid=<?php echo $menuid ?>>
-            		<a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'new')); ?> class="dashboard">
+            		<a href=<?php echo URL::base().Route::get('default')->uri(array('controller' => 'abmusers', 'action' => 'edit')); ?> class="dashboard">
             			<span>Usuarios</span>            			
             		</a>
             	</li>

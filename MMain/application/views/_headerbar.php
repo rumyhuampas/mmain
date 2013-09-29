@@ -3,6 +3,7 @@
 		$_sess = Session::instance();
 		$_username = $_sess->get('currentuser');
 		$_userid = $_sess->get('currentuserid');
+		$_userprofile = $_sess->get('currentuserprofile');
 		if($_userid == ''){
 			HTTP::redirect(Route::get('default')->uri(array('controller' => 'login')));	
 		}
