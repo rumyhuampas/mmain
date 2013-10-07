@@ -38,6 +38,32 @@ Class Controller_ABMUsers extends Controller
 		}
     }
 
+	public function action_editprofiles(){
+		if(isset($_POST['upadmin']) || isset($_POST['upgranja']) || isset($_POST['upventa']) || isset($_POST['upestadistico'])){
+			$session = Session::instance();
+			$userid = $session->get('currentuserid');
+			$user = ORM::factory('user', $userid);
+			
+			$profile = "";
+			if(isset($_POST['upadmin'])){ $profile .= Helpers_Const::UPADMIN.","; }
+			if(isset($_POST['upventa'])){ $profile .= Helpers_Const::UPVENTA.","; }
+			if(isset($_POST['upgranja'])){ $profile .= Helpers_Const::UPGRANJA.","; }
+			if(isset($_POST['upestadistico'])){ $profile .= Helpers_Const::UPESTADISTICO.","; }
+			if(strlen($profile) > 0){ $profile = substr($profile, 0, -1); }
+			$user->Profile = $profile;
+			$user->update();
+			
+			$session->set('currentuserprofile', $user->Profile);
+			
+			HTTP::redirect(Route::get('msg')->uri(array('controller' => 'abmusers', 'action' => 'edit',
+				'msgtype' => 'msgsuccess', 'msgtext' => 'Usuario modificado con exito.')));
+		}
+		else{
+			HTTP::redirect(Route::get('msg')->uri(array('controller' => 'abmusers', 'action' => 'edit',
+				'msgtype' => 'msgalert', 'msgtext' => 'Debe seleccionar al menos un perfil.')));
+		}
+	}
+
 	public function action_new()
     {
     	if(!isset($_POST['username'])){
@@ -53,6 +79,15 @@ Class Controller_ABMUsers extends Controller
 					$user = ORM::factory('user');
 					$user->UserName = $_POST['username'];
 					$user->Password = $_POST['newpass'];
+					
+					$profile = "";
+					if(isset($_POST['upadmin'])){ $profile .= Helpers_Const::UPADMIN.","; }
+					if(isset($_POST['upventa'])){ $profile .= Helpers_Const::UPVENTA.","; }
+					if(isset($_POST['upgranja'])){ $profile .= Helpers_Const::UPGRANJA.","; }
+					if(isset($_POST['upestadistico'])){ $profile .= Helpers_Const::UPESTADISTICO.","; }
+					if(strlen($profile) > 0){ $profile = substr($profile, 0, -1); }
+					$user->Profile = $profile;
+					
 					$user->create();
 					
 					HTTP::redirect(Route::get('msg')->uri(array('controller' => 'abmusers', 'action' => 'new',

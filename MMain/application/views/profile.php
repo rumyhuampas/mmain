@@ -62,9 +62,45 @@
                         echo '</p>';
                         
                         echo '<p class="stdformbutton">';
-                        	echo Form::button('btnsave', 'Guardar', array('class' => 'submit radius2'));
+                        	echo Form::button('btnsave', 'Cambiar contraseña', array('class' => 'submit radius2'));
                         echo '</p>';
                     echo Form::close();
+					
+					echo Form::open('abmusers/editprofiles', array('method' => 'POST', 'class' => 'stdform', 'id' => 'formeditprofiles'));
+						echo '<p>';
+							echo Form::label('checks', 'Perfiles');
+                            echo '<span class="formwrapper">';
+							if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
+								echo '<span class="checkbox">'.Form::input('upadmin', '', array('type' => 'checkbox', 'id' => 'upadmin', 'checked')).'</span>ADMIN<br>';
+							}
+							else{
+								echo '<span class="checkbox">'.Form::input('upadmin', '', array('type' => 'checkbox', 'id' => 'upadmin')).'</span>ADMIN<br>';
+							}
+							if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPVENTA)){
+								echo '<span class="checkbox">'.Form::input('upventa', '', array('type' => 'checkbox', 'id' => 'upventa', 'checked')).'</span>VENTA<br>';	
+							}
+							else{
+								echo '<span class="checkbox">'.Form::input('upventa', '', array('type' => 'checkbox', 'id' => 'upventa')).'</span>VENTA<br>';
+							}
+							if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPGRANJA)){
+								echo '<span class="checkbox">'.Form::input('upgranja', '', array('type' => 'checkbox', 'id' => 'upgranja', 'checked')).'</span>GRANJA<br>';	
+							}
+							else{
+								echo '<span class="checkbox">'.Form::input('upgranja', '', array('type' => 'checkbox', 'id' => 'upgranja')).'</span>GRANJA<br>';
+							}
+							if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPESTADISTICO)){
+								echo '<span class="checkbox">'.Form::input('upestadistico', '', array('type' => 'checkbox', 'id' => 'upestidistico', 'checked')).'</span>ESTADISTICO';	
+							}
+							else{
+								echo '<span class="checkbox">'.Form::input('upestadistico', '', array('type' => 'checkbox', 'id' => 'upestidistico')).'</span>ESTADISTICO';
+							}
+                            echo '</span>';
+                        echo '</p>';
+						
+						echo '<p class="stdformbutton">';
+                        	echo Form::button('btnsave', 'Guardar perfiles', array('class' => 'submit radius2'));
+                        echo '</p>';
+					echo Form::close();
 					?>
                 
                 	<br clear="all" />
