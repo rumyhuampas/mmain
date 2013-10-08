@@ -22,17 +22,17 @@
 				<li><a class="porkman" href="/mfarm/home" style=" ">PorkMan</a></li>
 				<?php
 				}
-				if (strpos($_userprofile, Helpers_Const::UPADMIN) !== false) {
+				if (Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
 				?>
 				<li><a class="editor" href="/mjor/home">JorMan</a></li>
 				<?php
 				}
-				if (strpos($_userprofile, Helpers_Const::UPADMIN) !== false) {
+				if (Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
 				?>
 				<li><a class="add" href="#" style=" ">StockMan</a></li>
 				<?php
 				}
-				if (strpos($_userprofile, Helpers_Const::UPADMIN) !== false) {
+				if (Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
 				?>
 				<li><a class="babybottle" href="#">AcopioMan</a></li>
 				<?php
@@ -41,12 +41,7 @@
 			</ul>
 			
 			<br clear="all">
-
-			<div class="loginform" style="height:40px; margin-right: 8%;">
-				<div style="position:relative; float:right;">
-					<a href="../mmain/"><button class="radius3 bebas default" style="width:100px" name="btnlogin" >Salir</button></a>
-				</div>
-         	</div>
+			
 		</div>
 	</div>
 </body>

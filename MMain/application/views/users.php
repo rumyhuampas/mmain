@@ -90,9 +90,14 @@
 	                    		echo '<tr>';
 		                            echo '<td>'.$user->UserName.'</td>';
 									echo '<td class="center">';
+									if (Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
+										echo '<a href='.URL::base().Route::get('default')
+		                            		->uri(array('controller' => 'abmusers', 'action' => 'edit', 'id' => $user->Id)).'class="delete"> Editar </a>';
+									}
 									if($user->Id != $_userid){
+										echo '-';
 		                            	echo '<a href='.URL::base().Route::get('default')
-		                            		->uri(array('controller' => 'abmusers', 'action' => 'delete', 'id' => $user->Id)).'class="delete">Eliminar</a>';
+		                            		->uri(array('controller' => 'abmusers', 'action' => 'delete', 'id' => $user->Id)).'class="delete"> Eliminar </a>';
 									}
 									echo '</td>';
 		                        echo '</tr>';

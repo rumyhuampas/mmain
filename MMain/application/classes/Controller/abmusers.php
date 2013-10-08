@@ -8,9 +8,15 @@ Class Controller_ABMUsers extends Controller
     		$view = View::factory('profile');
 			$view->title = Helpers_Const::APPNAME." - Perfil de usuario";
 			$view->menuid = Helpers_Const::MENUINICIOID;
-			$session = Session::instance();
-			$userid = $session->get('currentuserid');
-			$view->userobj = ORM::factory('user', $userid);
+			$userid = $this->request->param('id');
+			if(isset($userid)){
+				$view->userobj = ORM::factory('user', $userid);	
+			}
+			else{
+				$session = Session::instance();
+				$userid = $session->get('currentuserid');
+				$view->userobj = ORM::factory('user', $userid);
+			}
 			$this->response->body($view->render());
 		}
 		else{
