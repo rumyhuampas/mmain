@@ -39,10 +39,12 @@
                     <ul>
                         <li><a href=<?php echo URL::base()."../mmain/abmusers/edit" ?>>Perfil</a></li>
                         <?php
-		                if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
-		                ?>
-                        <li><a href=<?php echo URL::base()."../mmain/abmusers/new" ?>>Usuarios del sistema</a></li>
-                        <?php
+                        if(isset($_userprofile)){
+			                if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
+			                ?>
+	                        <li><a href=<?php echo URL::base()."../mmain/abmusers/new" ?>>Usuarios del sistema</a></li>
+	                        <?php
+							}
 						}
                         ?>
                         <li><a href=<?php echo URL::base()."../mmain/welcome" ?> >Menu principal</a></li>
