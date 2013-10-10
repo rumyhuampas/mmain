@@ -33,7 +33,7 @@
     		<div id="userPanel" class="headercolumn">
                 <a href="#" class="userinfo radius2">
                     <img src=<?php echo URL::base()."assets/images/avatar.png" ?> alt="" class="radius2" />
-                    <span><strong><?php echo $_username ?></strong></span>
+                    <span><strong><?php if(isset($_username)){ echo $_username; }?></strong></span>
                 </a>
                 <div class="userdrop">
                     <ul>
