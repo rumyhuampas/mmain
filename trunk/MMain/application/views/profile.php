@@ -66,7 +66,7 @@
                         echo '</p>';
                     echo Form::close();
 					
-					if(Helpers_Utils::strContains($userobj->Profile, Helpers_Const::UPADMIN)){
+					if(Helpers_Utils::strContains($_userprofile, Helpers_Const::UPADMIN)){
 						echo Form::open('abmusers/editprofiles', array('method' => 'POST', 'class' => 'stdform', 'id' => 'formeditprofiles'));
 							echo '<p>';
 								echo Form::label('checks', 'Perfiles');
